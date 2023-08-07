@@ -1,19 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="font/stylesheet.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-    <style>
-        
-    </style>
+    <title>Тестовое задание</title>
 </head>
 <body>
-    
-    
+ 
     <div class="header">
         
         <div onclick="openBlock('mobileMenuHeader')" class="mobileIconMenu">
@@ -480,82 +476,37 @@
     <div class="form">
         <div class="headerForm">Отправь форму</div>
         <div class="conteinerForm">
-            <form action="">
+            <form id="form" action="">
                 <div class="divInput">
-                    <input  class="input inputText" type="text">
-                    <span class="labelname">Имя</span>
+                    <input onblur="onblurInput('inputName')" id="inputName" name="name" class="input inputText" type="text">
+                    <span id="labelNameForm"    class="labelname">Имя</span>
+                    <div id="imCancelInputName"><img src="image/cancel.png" alt=""></div>
+                    <div id="imOkInputName"><img src="image/check circle.jpg" alt=""></div>
+                    <span id="errorInputFormName">helperText</span>
                 </div>
                 <div class="divInput">   
-                    <input class="input inputText" type="text">
-                    <span class="labelname" for="">Телефон</span>
+                    <input onblur="onblurInput('inputPhone')" name="tel" id="inputPhone" class="input inputText" type="text">
+                    <span id="labelPhoneForm" class="labelname" for="">Телефон</span>
+                    <div id="imCancelInputPhone"><img src="image/cancel.png" alt=""></div>
+                    <div id="imOkInputPhone"><img src="image/check circle.jpg" alt=""></div>
+                    <span id="errorInputFormPhone">helperText</span>
                 </div>
                 <div class="conteinerCheckbox">
                     <input class="okNoInput" id="okNo" name="okNo" type="checkbox">
                     <label class="textOkNo" for="okNo">Согласен, отказываюсь</label>
                 </div>
                 <div class="conteinerButtonForm">
-                    <input class="inputButtonForm" type="button" value="Отправить">
+                    <input id="sub" class="inputButtonForm" type="submit" value="Отправить">
                 </div>
                 
             </form>
         </div>
     </div>
-<script>
-//------------------Carousel-----------------------------
-let positionCarousel = 0
-let divsCircleCarousel = document.getElementById('conteinerCircleCarousel').getElementsByTagName("div"), x;
-function arrowBackCarousel(){
-    divsCircleCarousel[positionCarousel].style.background = "#C2C8CD";
-    positionCarousel--
-    if(positionCarousel<0)positionCarousel=4
-    divsCircleCarousel[positionCarousel].style.background = "#2A6CEA";
-    let ml = positionCarousel*373
-    document.getElementById('innerCarousel').style.marginLeft = -ml+'px'
-    log(positionCarousel*373)
-}
-function arrowNextCarousel(){
-    divsCircleCarousel[positionCarousel].style.background = "#C2C8CD";
-    positionCarousel++
-    if(positionCarousel>4)positionCarousel=0
-    divsCircleCarousel[positionCarousel].style.background = "#2A6CEA";
-    let ml = positionCarousel*373
-    document.getElementById('innerCarousel').style.marginLeft = -ml+'px'
-    log(positionCarousel*373)
-}
-//--------------------questionAnswer------------------------
-function openAnswer(id){
-    let idd = "Answer"+id
-    let idOpenBut ="openQuestionButton"+id
-    let idCloseBut ="closeQuestionButton"+id
-   
-    let element = document.getElementById(idd);
-    let styles = window.getComputedStyle(element);
-    let styleDisplay = styles.getPropertyValue("display");
-    if(styleDisplay=="none"){
-        document.getElementById(idd).style.display = "block"
-        document.getElementById(idOpenBut).style.display = "none"
-        document.getElementById(idCloseBut).style.display = "block"
-    }else{
-        document.getElementById(idd).style.display = "none"
-        document.getElementById(idOpenBut).style.display = "block"
-        document.getElementById(idCloseBut).style.display = "none"
-    } 
-}
-//--------------------------System---------------------------------------- 
-function cancelBlock(id){
-    document.getElementById(id).style.display = "none"
-}
-function openBlock(id){
-    document.getElementById(id).style.display = "block"
-}
 
-function log(even){
-    console.log(even)
-} 
-</script>
-  <div class="footer">
+    <div class="footer">
         <div>© 2021 Лаборатория интернет</div>
-  </div>  
+    </div>  
+    <script src="script.js"></script>
 </body>
 </html>
 

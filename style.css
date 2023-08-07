@@ -937,6 +937,25 @@ body{
             border: 1px solid #C2C8CD;
             color: #191C1F;
         }
+        #errorInputFormPhone, #errorInputFormName{
+            display: none;
+            color: #F13636;
+            font-size: 12px;
+            line-height: 16px;
+            padding-top: 5px;
+        }
+        #imCancelInputPhone, #imCancelInputName{
+            display: none;
+            position: absolute;
+            top: 23px;
+            right: 22px;
+        }
+        #imOkInputPhone,#imOkInputName{
+            display: none;
+            position: absolute;
+            top: 23px;
+            right: 22px;
+        }
         @media screen and (max-width: 768px) {
           .inputText{
             width: 327px;
@@ -954,9 +973,16 @@ body{
             padding-left: 20px;
             padding-right: 20px;
           }
-          form{
-            width: 100%;
-          }
+            form{
+                width: 100%;
+            }
+            #imCancelInputPhone,#imCancelInputName{
+                right: 42px;
+            }
+            #imOkInputPhone,#imOkInputName{
+               
+                right: 42px;
+            }
         }
         @media screen and (max-width: 768px) {
             .conteinerForm{
@@ -981,6 +1007,7 @@ body{
             .conteinerCheckbox{
                 height: 40px;
             }
+           
         }
         @media screen and (max-width: 744px) {
             form>div{
@@ -991,6 +1018,12 @@ body{
             }
         }
         @media screen and (max-width: 320px) {
+            #imCancelInputPhone,#imCancelInputName{
+                right: 22px;
+            }
+            #imCancelInputPhone,#imCancelInputName{
+                right: 22px;
+            }
             .headerForm{
                 width: 100%;
             }
